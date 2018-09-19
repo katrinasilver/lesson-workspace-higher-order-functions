@@ -34,7 +34,7 @@ function groupByProperty(propertyName){
       acc[object[propertyName]].push(object)
     }
     else{
-      acc[object[propertyName]] = [object]
+      acc[object[propertyName]] = [ object ]
     }
     return acc
   }
