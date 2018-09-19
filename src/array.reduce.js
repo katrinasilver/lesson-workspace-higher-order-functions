@@ -1,15 +1,23 @@
-function add(a, b){
-  return a + b
-}
+const { groupByProperty } = require('./functions-return-functions');
+// function add(a, b){
+//   return a + b
+// }
 
 function sumNumbers(arr){
-  return arr.reduce(add, 0)
+  return arr.reduce(add, 0) // reduced method
   // return reduce(arr, add, 0);
   // let result = 0
   // for(const value of arr){
   //   result = add(result, value)
   // }
   // return result
+}
+
+// function within a function
+function sumNumbers(arr) {
+  return arr.reduce(function (a, b) {
+    return a + b
+  }, 0)
 }
 
 function count(acc, ele) {
@@ -53,13 +61,18 @@ function groupByUniversity(arr){
   // return result
 }
 
-function reduce(passedIn, fn, initVal) {
-  let result = initVal;
-  for (const value of passedIn) {
-    result = fn(result, value)
-  }
-  return result
+function groupByUniversity(arr) {
+  return arr.reduce(groupByProperty('university'), {})
 }
+
+
+// function reduce(passedIn, fn, initVal) {
+//   let result = initVal;
+//   for (const value of passedIn) {
+//     result = fn(result, value)
+//   }
+//   return result
+// }
 
 module.exports = {
   sumNumbers,

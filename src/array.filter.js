@@ -6,7 +6,7 @@
 
 function onlyOdds(arr){
   const result = []
-  return arr.filter(value => value % 2 === 1)
+  result = arr.filter(value => value % 2 === 1)
   // return arr.filter(isOdd)
   // return filter(arr, isOdd)
   // for(const value of arr){
@@ -17,13 +17,17 @@ function onlyOdds(arr){
   return result;
 }
 
+function onlyOdds(arr) {
+  return arr.filter(notDivisibleBy(2))
+}
+
 // function points(value) {
 //   return value.careerPoints < 30000
 // }
 
 function hasBelow30000CareerPoints(arr){
   const result = []
-  return arr.filter(value => value.careerPoints < 30000)
+  result = arr.filter(value => value.careerPoints < 30000)
   // return arr.filter(points)
   // return filter(arr, points)
   // for(const value of arr){
@@ -34,13 +38,17 @@ function hasBelow30000CareerPoints(arr){
   return result;
 }
 
+function hasBelow30000CareerPoints(arr) {
+  return arr.filter(scoreBelow(30000))
+}
+
 // function names(str) {
 //   return str[0] === 'A'
 // }
 
 function firstNameStartsWithA(arr){
   const result = []
-  return arr.filter(str => str[0] === 'A')
+  result = arr.filter(str => str[0] === 'A')
   // return arr.filter(names)
   // return filter(arr, names)
   // for(const value of arr){
@@ -49,6 +57,10 @@ function firstNameStartsWithA(arr){
   //   }
   // }
   return result;
+}
+
+function firstNameStartsWithA(arr) {
+  return arr.filter(startsWith('A'))
 }
 
 // function filter(arr, fn) {

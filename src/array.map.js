@@ -4,8 +4,8 @@ const { pluckProperty, multiplyBy } = require('./functions-return-functions')
 //   return number * 2
 // }
 
-function doubleNumbers(arr){
-  return arr.map(number => number * 2) //ES6 anonymous function
+// function doubleNumbers(arr){
+  // return arr.map(number => number * 2) //ES6 anonymous function
   // return arr.map(double)
   // return map(arr, double)
   // const result = []
@@ -13,14 +13,18 @@ function doubleNumbers(arr){
   //   result.push(double(value))
   // }
   // return result;
+// }
+
+function doubleNumbers(arr) {
+  return arr.map(multiplyBy(2)) //from functions-return-functions
 }
 
 // function pluck(obj) {
 //   return obj.name
 // }
 
-function pluckName(arr){
-  return arr.map(obj => obj.name)
+// function pluckName(arr){
+  // return arr.map(obj => obj.name)
   // return arr.map(pluck)
   // return map(arr, pluck)
   // const result = []
@@ -28,6 +32,10 @@ function pluckName(arr){
   //   result.push(pluck(value))
   // }
   // return result
+// }
+
+function pluckName(arr) {
+  return arr.map(pluckProperty('name'))
 }
 
 // function merger(obj) {
